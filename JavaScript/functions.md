@@ -1,5 +1,11 @@
 # Functions
 
+### :: Index
+- [함수란?](https://github.com/joonsikyang/dev-dots/blob/main/JavaScript/functions.md#-%ED%95%A8%EC%88%98%EB%9E%80)
+- [함수를 사용하는 이유](https://github.com/joonsikyang/dev-dots/blob/main/JavaScript/functions.md#-%ED%95%A8%EC%88%98%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
+
+<br />
+
 ### :: 함수란?
 - 프로그래밍 언어의 함수는 일련의 과정을 문(statement)으로 구현하고 코드 블록으로 감싸서 하나의 실행 단위로 정의한 것이다.
 - 프로그래밍 언어의 함수도 수학의 함수와 같이 입력을 받아서 출력을 내보낸다. 이때 함수 내부로 입력을 전달받는 변수를 매개변수(parameter), 입력을 인수(argument), 출력을 반환값(return value)이라 한다.
