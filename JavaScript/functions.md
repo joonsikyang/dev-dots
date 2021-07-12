@@ -4,7 +4,7 @@
 - [함수란?](https://github.com/joonsikyang/dev-dots/blob/main/JavaScript/functions.md#-%ED%95%A8%EC%88%98%EB%9E%80)
 - [함수를 사용하는 이유](https://github.com/joonsikyang/dev-dots/blob/main/JavaScript/functions.md#-%ED%95%A8%EC%88%98%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
 - 함수 선언문과 함수 표현식, 함수의 생성 시점에 따른 차이(호이스팅)
-- 콜백 함수 (Callback Functions)
+- [콜백 함수 (Callback Functions)](https://github.com/joonsikyang/dev-dots/blob/main/JavaScript/functions.md#-%EC%BD%9C%EB%B0%B1-%ED%95%A8%EC%88%98-callback-functions)
 
 <br />
 
@@ -109,3 +109,15 @@
 <br />
 
 ### :: 콜백 함수 (Callback Functions)
+1. 콜백 함수란?
+    - 콜백 함수(callback function)는 다른 코드의 인자로 넘겨주는 함수
+    
+    - call + back = ‘되돌아 호출해달라’
+    
+    - 어떤 함수 X를 호출하면서 ‘특정 조건일 때 함수 Y를 실행해서 나에게 알려달라’는 요청을 함께 보내는 것
+    
+    - 요청을 받은 함수 X의 입장에서는 해당 조건이 갖춰졌는지 여부를 스스로 판단하고 Y를 직접 호출
+    
+    - 이처럼 콜백함수는 다른 코드(함수 또는 메서드)에게 인자로 넘겨줌으로써 그 `**제어권**` 도 함께 위임한 함수
+    
+    - 콜백 함수를 위임받은 코드는 자체적인 내부 로직에 의해 이 콜백 함수를 필요에 따라 적절한 시점에 시행
