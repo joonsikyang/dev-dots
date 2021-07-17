@@ -273,3 +273,89 @@
         - `obj` 를 this로 하는 메서드를 그대로 전달한 것이 아닌, `obj.logValues` 가 가리키는 함수만 전달
     
     - 결국 어떤 함수의 인자에 객체의 메서드를 전달하더라도 이는 결국 메서드가 아닌 함수일 뿐
+
+<br />
+ 
+4. 콜백 함수 내부의 this 에 다른 값 바인딩하기
+    
+    - "콜백 함수는 함수다." 객체의 메서드를 콜백 함수로 전달하면 해당 객체를 this 로 바라볼 수 없게 된다.
+    
+    - 그럼에도 콜백 함수 내부에서 this 가 객체를 바라보게 하는 방법
+    
+    - 방법 1) 전통적인 방법
+        
+        - 전통적으로는 this를 다른 변수에 담아 콜백 함수로 활용할 함수에서는 this 대신 그 변수를 사용하게 하고, 이를 클로저로 만드는 방식
+
+        ```jsx
+        // 콜백 함수 내부의 this 에 다른 값을 바인딩하는 방법(1) - 전통적인 방식
+        var obj1 = {
+        	name: 'obj1',
+        	func: function () {
+        		var self = this;
+        		return function () {
+        			console.log(self.name);
+        		}
+        	}
+        }
+
+        var callback = obj1.func();
+        setTimeout(callback, 1000); // 'obj1' 출력
+        ```
+
+        - 이 방식은 실제로 this를 사용하지도 않고, 번거롭고, 메모리를 낭비하는 측면도 있음
+        
+        - 차라리 this 를 아예 안 쓰는 편이 더 낫겠다는 생각..
+
+        ```jsx
+        // 콜백 함수 내부에서 this를 사용하지 않는 경우
+        var obj1 = {
+        	name: 'obj1',
+        	func: function () {
+        		console.log(obj1.name);
+        	}
+        };
+
+        setTimeout(obj1.func, 1000);
+        ```
+
+
+        - 훨씬 간결하고 직관적. 하지만 작성한 함수를 this 를 이용해 다양한 상황에 재활용할 수 없는 아쉬움.
+
+
+        ```jsx
+        // func 함수 재활용
+        var obj2 = {
+        	name: 'obj2',
+        	func: obj1.func // obj1의 func 복사
+        }
+
+        var callback2 = obj2.func();
+        setTimeout(callback2, 1500);
+
+        var obj3 = { name: 'obj3' };
+        var callback3 = obj1.func.call(obj3);
+        setTimeout(callback3, 2000);
+        ```
+
+        - 위와 같이 전통적인 방법은 번거롭기는 하지만 this를 우회적으로나마 활용함으로써 다양한 상황에서 원하는 객체를 바라보는 콜백 함수를 만들 수 있는 방법
+    
+    - 방법 2) `bind` 메서드 활용
+
+        ```jsx
+        var obj1 = {
+        	name: 'obj1',
+        	func: function () {
+        		console.log(this.name)
+        	}
+        };
+
+        setTimeout(obj1.func.bind(obj1), 1000);
+
+        var obj2 = { name: 'obj2' };
+        setTimeout(obj1.func.bind(obj2), 1500);
+        ```
+ 
+<br />
+ 
+5. 콜백 지옥과 비동기 제어
+    - (내용 작성중)
