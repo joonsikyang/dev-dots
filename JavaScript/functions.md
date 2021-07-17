@@ -250,3 +250,26 @@
 <br />
 
 3. 콜백 함수는 함수다.
+
+    - 콜백 함수로 어떤 객체의 메서드를 전달 하더라도 그 메서드는 메서드가 아닌 함수로서 호출됩니다.
+
+    ```jsx
+    var obj = {
+        vals: [1, 2, 3];
+      logValues: function(v, i) {
+            console.log(this, v, i)
+        }
+    };
+
+    obj.logValues(1, 2); // this >>> obj : 메서드로서 호출
+
+    [4, 5, 6].forEach(obj.logValues); // this >>> Window : 콜백 함수로서 호출
+    ```
+
+    - `[4, 5, 6].forEach(obj.logValues)`
+        
+        - 메서드를 `forEach` 함수의 콜백 함수로 전달
+        
+        - `obj` 를 this로 하는 메서드를 그대로 전달한 것이 아닌, `obj.logValues` 가 가리키는 함수만 전달
+    
+    - 결국 어떤 함수의 인자에 객체의 메서드를 전달하더라도 이는 결국 메서드가 아닌 함수일 뿐
