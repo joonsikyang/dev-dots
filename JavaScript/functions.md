@@ -494,4 +494,227 @@
 <br />
  
 - 콜백 지옥과 비동기 제어
-    - (내용 작성중)
+    - 콜백 지옥 Callback Hell
+        
+        - 콜백 함수를 익명 함수로 전달하는 과정이 반복되어 코드의 들여쓰기 수준이 감당하기 힘들 정도로 깊어지는 현상.
+        
+        - 주로 이벤트 처리나 서버 통신과 같이 `비동기적인 작업`을 수행하기 위해 이런 형태가 자주 등장.
+    
+    - `동기 synchronous` vs. `비동기 asynchronous`
+        
+        - 동기적인 코드
+            
+            - 현재 실행 중인 코드가 완료된후 다음 코드 실행
+            
+            - CPU의 계산에 의해 즉시 처리가 가능한 대부분의 코드는 동기적인 코드.
+            
+            - 계산식이 복잡해서 CPU가 계산하는 데 시간이 많이 필요한 경우라 하더라도 이는 동기적인 코드.
+        
+        - 비동기적인 코드
+            
+            - 현재 실행 중인 코드의 완료 여부와 무관하게 즉시 다음 코드 실행
+            
+            - **별도의 요청, 실행 대기, 보류 등과 관련된 코드**
+            
+            - 사용자의 요청에 의해 특정 시간이 경과되기 전까지 어떤 함수의 실행을 보류 (`setTimeout`)
+            
+            - 사용자의 직접적인 개입이 있을 때 비로소 어떤 함수를 실행하도록 대기(`addEventListener`)
+            
+            - 웹 브라우저 자체가 아닌 별도의 대상에 무언가를 요청하고 그에 대한 응답이 왔을 때 비로소 어떤 함수를 실행하도록 대기(`XMLHttpRequest`)
+            
+            - **현대의 자바스크립트는 웹의 복잡도가 높아진 만큼 비동기적인 코드의 비중이 예전보다 훨씬 높아진 상황**
+            
+            - (그만큼 콜백 지옥에 빠지기 쉬움)
+    
+    - 콜백 지옥 예시
+
+        ```jsx
+        // callback hell
+        setTimeout(function (name) { 
+          var coffeeList = name;
+
+          setTimeout(function (name) {
+            coffeeList += ', ' + name;
+
+            setTimeout(function (name) {
+              coffeeList += ', ' + name;
+
+              setTimeout(function (name) {
+                coffeeList += ', ' + name;
+              })
+            }, 500, '카페모카')
+          }, 500, '아메리카노' )
+        }, 500, '에스프레소');
+        ```
+
+        - 가독성이 떨어지고 값이 전달되는 순서가 '아래에서 위로' 향하고 있어 어색함
+    
+    - 콜백 지옥 해결 (전통적 방법) - 기명 함수로 변환
+
+        ```jsx
+        // 기명 함수를 사용한 해결 방식
+        var coffeeList = '';
+
+        var addEspresso = function(name) {
+          coffeeList = name;
+          setTimeout(addAmericano, 500, '아메리카노')
+        }
+
+        var addAmericano = function(name) {
+          coffeeList = ', ' + name;
+          setTimeout(addMocha, 500, '카페모카')
+        }
+
+        var addMocha = function(name) {
+          coffeeList = ', ' + name;
+        }
+
+        setTimeout(addEspresso, 500, '에스프레소')
+        ```
+
+        - 가독성이 조금 높아지고 직관적
+        
+        - 하지만 일회성 함수를 전부 변수에 할당하는 것...
+        
+        - 코드명을 일일이 따라다녀야 해서 가독성 측면에서도 불편함
+    
+    - 비동기 작업의 동기적 표현
+        
+        - 자바스크립트는 비동기적인 일련의 작업을 동기적으로, 혹은 동기적인 것처럼 보이게끔 처리해주는 장치를 마련하고자 끊임없이 노력
+            
+            - ES6 - `Promise`, `Generator` 도입
+            
+            - ES7 - `async` / `await` 도입
+        
+        - 비동기 작업의 동기적 표현 - 1) `Promise(1)`
+
+            ```jsx
+            // Promise(1)
+            new Promise(function(resolve) {
+              setTimeout(function() {
+                var name = '에스프레소';
+                console.log(name);
+                resolve(name);
+              }, 500);
+            }).then(function(prevName) {
+              return new Promise(function(resolve) {
+                setTimeout(function() {
+                  var name = prevName + ', 아메리카노';
+                  console.log(name);
+                  resolve(name);
+                }, 500);
+              })
+            }).then(function(prevName) {
+              return new Promise(function(resolve) {
+                setTimeout(function() {
+                  var name = prevName + ', 카페모카';
+                  console.log(name);
+                  resolve(name);
+                }, 500);
+              })
+            });
+            ```
+
+            
+            - 첫 번째로 ES6의 `Promise` 를 이용한 방식
+            
+            - `new` 연산자와 함께 호출한 `Promise` 의 인자로 넘겨주는 콜백 함수는 호출할 때 바로 실행되지만 그 내부에 `resolve` 또는 `reject` 함수를 호출하는 구문이 있을 경우 둘 중 하나가 실행되기 전까지는 다음(`then`)  또는 오류 구문(`catch`)으로 넘어가지 않습니다.
+            
+            - 따라서 비동기 작업이 완료될 때 비로소 `resolve` 또는 `reject` 를 호출하는 방법으로 비동기 작업의 동기적 표현이 가능합니다.
+        
+        - 비동기 작업의 동기적 표현 - 2) `Promise(2)`
+
+            ```jsx
+            // Promise(2)
+            const addCoffee = function(name) {
+              return function(prevName) {
+                return new Promise(function(resolve) {
+                  setTimeout(function() {
+                    const newName = prevName ? prevName + ', ' + name : name;
+                    console.log(newName);
+                    resolve(newName);
+                  }, 500);
+                })
+              }
+            };
+
+            addCoffee('에스프레소')()
+              .then(addCoffee('아메리카노'))
+              .then(addCoffee('카페라떼'));
+            ```
+
+            - 위의 코드 중 반복되는 내용을 함수로 간단하게 표현한 것
+            
+            - cf. 클로저 (Closure)
+        
+        - 비동기 작업의 동기적 표현 - 3) `Generator`
+
+            ```jsx
+            // Generator
+            var addCoffee = function(prevName, name) {
+              setTimeout(function() {
+                coffeemaker.next(prevName ? prevName + ', ' + name : name);
+              }, 500);
+            };
+
+            var coffeeGenerator = function* () {
+              var espresso = yield addCoffee('', '에스프레소');
+              console.log(espresso);
+
+              var americano = yield addCoffee(espresso, '아메리카노');
+              console.log(americano);
+
+              var mocha = yield addCoffee(americano, '카페모카')
+              console.log(mocha);
+            }
+
+            var coffeemaker = coffeeGenerator();
+            coffeemaker.next();
+            ```
+
+            - ES6 의 `Generator` 를 이용한 방법
+            
+            - 6번째 줄의 `*` 이 붙은 함수가 바로 `Generator` 함수
+            
+            - `Generator` 함수를 실행하면 `Iterator` 함수가 반환되는데, `Iterator` 는 `next` 라는 메서드를 가지고 있습니다.
+            
+            - 이 `next` 메서드를 호출하면 `Generator` 함수 내부에서 가장 먼저 등장하는 `yield` 에서 함수의 실행을 멈춥니다.
+            
+            - 이후 다시 `next` 메서드를 호출하면 앞서 멈췄던 부분부터 시작해서 그 다음에 등장하는 `yield` 에서 함수의 실행을 멈춥니다.
+            
+            - 이와같이 비동기 작업이 완료되는 시점마다 `next` 메서드를 호출해준다면 `Generator` 함수 내부의 소스가 위에서부터 아래로 순차적으로 진행됩니다.
+        
+        - 비동기 작업의 동기적 표현 - 4) `Promise + async/await`
+
+            ```jsx
+            // Promise + Async/Await
+            var addCoffee = function(name) {
+              return new Promise(function(resolve) {
+                setTimeout(function() {
+                  resolve(name);
+                }, 500);
+              });
+            };
+
+            var coffeeMaker = async function() {
+              var coffeeList = '';
+
+              var _addCoffee = async function(name) {
+                coffeeList += (coffeeList ? ',' : '') + await addCoffee(name);
+              }
+
+              await _addCoffee('에스프레소');
+              await _addCoffee('아메리카노');
+              await _addCoffee('카페모카');
+            };
+
+            coffeeMaker();
+            ```
+
+            - ES 2017의 `async` / `await` 을 활용하는 방법
+            
+            - 가독성이 뛰어나면서도 작성법이 간단함
+            
+            - 비동기 작업을 수행하고자 하는 함수 앞에 `async` 를 표기하고, 함수 내부에서 실질적인 비동기 작업이 필요한 위치마다 `await` 를 표기하는 것만으로 뒤의 내용을 `Promise`로 자동 전환하고, 해당 내용이 `resolve` 된 이후에야 다음으로 진행된다.
+            
+            - 즉 Promise의 then 과 흡사한 효과
