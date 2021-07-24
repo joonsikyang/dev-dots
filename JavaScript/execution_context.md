@@ -1,7 +1,7 @@
 # Execution Context (실행 컨텍스트)
 
 ### :: Index
-- 소스코드의 타입
+- [소스코드의 타입](https://github.com/joonsikyang/dev-dots/blob/main/JavaScript/execution_context.md#-%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%EC%9D%98-%ED%83%80%EC%9E%85)
 - 소스코드의 평가와 실행
 
 <br />
