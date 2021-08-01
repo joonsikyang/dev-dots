@@ -1,11 +1,11 @@
 # Data Types (데이터타입)
 
 ### :: Index
-- [데이터 타입의 필요성]()
-- [7가지 데이터 타입]()
-- [동적 타이핑 : 동적 타입 언어와 정적 타입 언어]()
-- [원시값과 객체의 비교]()
-- [불변 객체]()
+- [데이터 타입의 필요성](https://github.com/joonsikyang/dev-dots/blob/main/JavaScript/data_types.md#-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85%EC%9D%98-%ED%95%84%EC%9A%94%EC%84%B1)
+- [7가지 데이터 타입](https://github.com/joonsikyang/dev-dots/blob/main/JavaScript/data_types.md#-7%EA%B0%80%EC%A7%80-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85)
+- [동적 타이핑 : 동적 타입 언어와 정적 타입 언어](https://github.com/joonsikyang/dev-dots/blob/main/JavaScript/data_types.md#-%EB%8F%99%EC%A0%81-%ED%83%80%EC%9D%B4%ED%95%91--%EB%8F%99%EC%A0%81-%ED%83%80%EC%9E%85-%EC%96%B8%EC%96%B4%EC%99%80-%EC%A0%95%EC%A0%81-%ED%83%80%EC%9E%85-%EC%96%B8%EC%96%B4)
+- [원시값과 객체의 비교](https://github.com/joonsikyang/dev-dots/blob/main/JavaScript/data_types.md#-%EC%9B%90%EC%8B%9C%EA%B0%92%EA%B3%BC-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%B9%84%EA%B5%90)
+- [불변 객체](https://github.com/joonsikyang/dev-dots/blob/main/JavaScript/data_types.md#-%EB%B6%88%EB%B3%80-%EA%B0%9D%EC%B2%B4)
 
 <br />
 
