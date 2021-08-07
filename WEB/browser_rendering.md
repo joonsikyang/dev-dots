@@ -1,15 +1,15 @@
 # 브라우저의 렌더링 과정
 ### :: Index
-- 브라우저의 렌더링 과정
-- 요청과 응답
-- HTTP 1.1과 HTTP 2.0
-- HTML 파싱과 DOM 생성
-- CSS 파싱과 CSSOM 생성
-- 렌더 트리 생성
-- 자바스크립트 파싱과 실행
-- 리플로우와 리페인트
-- 자바스크립트 파싱에 의한 HTML 파싱 중단
-- script 태그의 async/defer attribute
+- [브라우저의 렌더링 과정](https://github.com/joonsikyang/dev-dots/blob/main/WEB/browser_rendering.md#-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98-%EB%A0%8C%EB%8D%94%EB%A7%81-%EA%B3%BC%EC%A0%95)
+- [요청과 응답](https://github.com/joonsikyang/dev-dots/blob/main/WEB/browser_rendering.md#-%EC%9A%94%EC%B2%AD%EA%B3%BC-%EC%9D%91%EB%8B%B5)
+- [HTTP 1.1과 HTTP 2.0](https://github.com/joonsikyang/dev-dots/blob/main/WEB/browser_rendering.md#-http-11%EA%B3%BC-http-20)
+- [HTML 파싱과 DOM 생성](https://github.com/joonsikyang/dev-dots/blob/main/WEB/browser_rendering.md#-html-%ED%8C%8C%EC%8B%B1%EA%B3%BC-dom-%EC%83%9D%EC%84%B1)
+- [CSS 파싱과 CSSOM 생성](https://github.com/joonsikyang/dev-dots/blob/main/WEB/browser_rendering.md#-css-%ED%8C%8C%EC%8B%B1%EA%B3%BC-cssom-%EC%83%9D%EC%84%B1)
+- [렌더 트리 생성](https://github.com/joonsikyang/dev-dots/blob/main/WEB/browser_rendering.md#-%EB%A0%8C%EB%8D%94-%ED%8A%B8%EB%A6%AC-%EC%83%9D%EC%84%B1)
+- [자바스크립트 파싱과 실행](https://github.com/joonsikyang/dev-dots/blob/main/WEB/browser_rendering.md#-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%8C%8C%EC%8B%B1%EA%B3%BC-%EC%8B%A4%ED%96%89)
+- [리플로우와 리페인트](https://github.com/joonsikyang/dev-dots/blob/main/WEB/browser_rendering.md#-%EB%A6%AC%ED%94%8C%EB%A1%9C%EC%9A%B0%EC%99%80-%EB%A6%AC%ED%8E%98%EC%9D%B8%ED%8A%B8)
+- [자바스크립트 파싱에 의한 HTML 파싱 중단](https://github.com/joonsikyang/dev-dots/blob/main/WEB/browser_rendering.md#-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%8C%8C%EC%8B%B1%EC%97%90-%EC%9D%98%ED%95%9C-html-%ED%8C%8C%EC%8B%B1-%EC%A4%91%EB%8B%A8)
+- [script 태그의 async/defer attribute](https://github.com/joonsikyang/dev-dots/blob/main/WEB/browser_rendering.md#-script-%ED%83%9C%EA%B7%B8%EC%9D%98-asyncdefer-attribute)
 
 <br />
 
