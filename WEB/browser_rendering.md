@@ -134,7 +134,10 @@
 
 - 즉, DOM은 HTML 문서를 파싱한 결과물이다.
 
-- DOM 생성 과정 (그림 38-6 참고)
+- DOM 생성 과정
+
+    ![full-process](https://user-images.githubusercontent.com/43266792/128587778-d14a2530-4540-4d8e-879d-c289b5cc1633.png)
+
     - `바이트` : 서버에 존재하던 HTML 파일이 브라우저의 요청에 의해 응답된다. 이때 서버는 브라우저가 요청한 HTML 파일을 읽어 들여 메모리에 저장한 다음 메모리에 저장된 바이트(2진수)를 인터넷을 경유하여 응답한다. 브라우저는 서버가 응답한 HTML 문서를 바이트(2진수)형태로 응답받는다.
     
     - `문자` : 응답된 바이트 형태의 HTML 문서는 `meta` 태그의 `charset` 어트리뷰트에 의해 지정된 인코딩 방식(예: `UTF-8`)을 기준으로 문자열로 반환된다. 참고로 `meta` 태그의 `charset` 어트리뷰트에 선언된 인코딩 방식(예: `UTF-8`)은 `content-type: text/html; charset=utf-8` 과 같이 응답 헤더(response header)에 담겨 응답된다. 브라우저는 이를 확인하고 문자열로 반환한다.
@@ -151,6 +154,7 @@
 - 렌더링 엔진은 HTML 을 한줄씩 순차적으로 파싱하여 DOM을 생성해 나가다가 CSS 를 로드하는 `link` 태그나 `style` 태그를 만나면 DOM 생성을 일시 중단한다.
 
 - 그리고 `link` 태그의 `href` 어트리뷰트에 지정된 CSS 파일을 서버에 요청하여 로드한 CSS 파일이나 style 태그 내의 CSS를 HTML과 동일한 파싱 과정(바이트 → 문자 → 토큰 → 노드 → CSSOM)을 거치며 해석하여 CSSOM(CSS Object Model)을 생성한다.
+    ![cssom-construction](https://user-images.githubusercontent.com/43266792/128587805-094129c2-57c3-4629-bb43-599911a173df.png)
 
 - 이후 CSS 파싱을 완료하면 HTML 파싱이 중단된 지점부터 다시 HTML을 파싱하기 시작하여 DOM 생성을 재개한다.
 
