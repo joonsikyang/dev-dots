@@ -108,3 +108,71 @@
 <br />
 
 ### :: 함수에서 타입 이용하기
+- 자바스크립트 함수 vs. 타입스크립트 함수
+    ```tsx
+    // JavaScript >>> BAD
+    function jsADD(num1, num2) {
+      return num1 + num2;
+    }
+
+    // TypeScript
+    function ADD(num1: number, num2: number): number {
+      return num1 + num2;
+    }
+
+    // JavaScript >>> BAD
+    function jsFetchNum(id) {
+      // code ...
+      // code ... 이렇게 중간 코드가 길어지는 경우 어떤 값을 return 하는지 명확히 파악하기가 어려움
+      // code ... 
+
+        return new Promise((resolve, reject) => {
+        resolve(100);
+      })
+    }
+
+    // TypeScript
+    function fetchNum(id: string): Promise<number> { // 보통 id는 string, 숫자를 Promise 하는 Promise number 타입을 return
+      // code ...
+      // code ...
+      // code ...
+
+      return new Promise((resolve, reject) => {
+        resolve(100);
+      })
+    }
+    ```
+- 타입을 이용한 함수 정의 방법 (`optional`, `default`, `spread`)
+    ```tsx
+    // JavaScript 최신 문법 + TypeScript 를 활용한 함수 정의 방법
+
+    // 1. Optional parameter >>> 전달 받을 수도 있고, 전달하지 않아도 되는 인자를 명시
+    function printName(firstName: string, lastName?: string) {
+      console.log(firstName);
+      console.log(lastName);
+    }
+
+    printName('Steve', 'Jobs');
+    printName('Joon') // Joon undefined
+    printName('Ellie', undefined); // Ellie undefined
+
+
+    // 2. Default parameter
+    function printMessage(message: string = 'default message') {
+      console.log(message)
+    }
+
+    printMessage();
+
+
+    // 3. Rest parameter
+    // 개수에는 상관 없이 동일한 타입의 데이터를 함수 인자로 전달할 때 rest parameter 사용
+    function addNumbers(...numbers: number[]): number {
+      return numbers.reduce((a, b) => a + b);
+    }
+
+    console.log(addNumbers(1, 2));
+    console.log(addNumbers(1, 2, 3, 4));
+    console.log(addNumbers(1, 2, 3, 4, 5, 6));
+    ```
+<br />
