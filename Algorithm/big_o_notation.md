@@ -5,6 +5,7 @@
 - Timing our code, Not Reliable.
 - Counting Operations
 - Big O Definition
+- Simplifying Big O Expressions
 
 <br />
 
@@ -175,6 +176,45 @@
         - `O(n)` operation inside of an `O(n)` operation
         
         - `O(n²)`
+
+<br />
+
+### :: Simplifying Big O Expressions
+- Constants Don't Matter
+    - `O(2n)` >>> `O(n)`
+    - `O(500)` >>> `O(1)`
+    - `O(13²`) >>> `O(n²)`
+
+- Smaller Terms Don't Matter
+    - `O(n + 10)` >>> `O(n)`
+    - `O(1000n + 50)` >>> `O(n)`
+    - `O(n² + 5n + 8)` >>> `O(n²)`
+
+- There are several rules that can help as a starting point. (Big O Shorthands)
+    - Arithmetic operations are constant
+    - Variable assignment is constant
+    - Accessing elements in an array (by index) or object(by key) is constant
+    - In a loop, the time complexity is the length of the loop times the complexity of whatever happens inside of the loop
+
+- Example 1) `O(n)`
+
+    ```jsx
+    function logAtLeast5(n) {
+      for (var i = 1; i <= Math.max(5, n); i++) {
+        console.log(i);
+      }
+    }
+    ```
+
+- Example 2) `O(1)`
+
+    ```jsx
+    function logAtMost5(n) {
+      for (var i = 1; i <= Math.min(5, n); i++) {
+        console.log(i);
+      }
+    }
+    ```
 
 <br />
 
