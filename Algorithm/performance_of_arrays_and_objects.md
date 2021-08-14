@@ -60,6 +60,36 @@
 <br />
 
 ### :: When are Arrays Slow?
+- Arrays : Ordered lists
+
+    ```jsx
+    let names = ["Michael", "Melissa", "Andrea"];
+    let values = [true, {}, [], 2, "awesome"];
+    ```
+
+- When to use Arrays
+    
+    - When you need order (cf. linked list)
+    
+    - When you need fast access / insertion and removal (depends on what you're trying to do)
+
+- Big O of Objects
+    
+    - Searching - `O(n)`
+    
+    - Access - `O(1)`
+    
+    - Insertion - It depends...
+        
+        - Inserting at the end - `O(1)`
+        
+        - Inserting at the beginning - `O(n)` (reindexing)
+      
+    - Removal - It depends...
+        
+        - Removing the last element - `O(1)`
+        
+        - Removing the first element - `O(n)` (reindexing)
 
 <br />
 
