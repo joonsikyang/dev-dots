@@ -7,6 +7,8 @@
 - Big O Definition
 - Simplifying Big O Expressions
 - Space Complexity
+- Logs
+- Section Recap
 
 <br />
 
@@ -262,4 +264,46 @@
 
 <br />
 
-### :: 
+### :: Logs
+- Logarithms
+    
+    - Besides `O(n)`,  `O(1)`, `O(n²)`, which is the most common complexities, big O expression involve more complex mathematical expressions which might appear often.
+    
+    - Certain searching algorithms have logarithmic time complexity.
+    
+    - Efficient sorting algorithms involve logarithms.
+    
+    - Recursion sometimes involves logarithmic space complexity
+    
+    - and more.
+
+- What's a log?
+    
+    - `Logarithmic form`  >>>  `Exponential form`
+    
+    - `log2(8) = 3`  >>>  `2^3 = 8`
+    
+    - `log2(value) = exponent`  >>>  `2^exponent = value`
+    
+    - We'll omit the 2. `log` === `log2`
+    
+    - The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to one.
+    
+    - ex. log(8) = 3 / log(25) = 4.64
+
+- Logarithm Complexity
+
+    <img width="600" alt="Screen Shot 2021-08-14 at 2 14 25 PM" src="https://user-images.githubusercontent.com/43266792/129434931-efa62b1d-034f-41be-9627-201ffe9e6f71.png">
+
+<br />
+
+### :: Section Recap
+- To analyze the performance of an algorithm, we use Big O Notation.
+
+- Big O Notation can give us a high level understanding of the time or space complexity of an algorithm.
+
+- Big O Notation doesn't care about precision, only about general trends (linear? quadratic? constant?)
+
+- The time or space complexity (as measured by Big O) depends only on the algorithm, not the hardware used to run the algorithm.
+
+- Big O Notation is everywhere, so get lots of practice!
