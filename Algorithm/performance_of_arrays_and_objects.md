@@ -17,6 +17,45 @@
 <br />
 
 ### :: The Big O of Objects
+- Objects : Unordered, key value pairs
+
+    ```jsx
+    let instructor = {
+        firstName: "JOON",
+        isInstructor: true,
+        favoriteNumbers: [1,2,3,4]
+    }
+    ```
+
+- When to use objects
+    
+    - When you don't need order
+    
+    - When you need fast access / insertion / removal
+
+- Big O of Objects
+    
+    - Insertion - `O(1)`
+    
+    - Removal - `O(1)`
+    
+    - Searching - `O(n)`
+    
+    - Access - `O(1)`
+    
+    - cf. searching : checking to see if a given piece of information is in a value somewhere.
+    
+    - cf. hash tables, hash maps
+
+- Big O of Object Methods
+    
+    - Object.keys - `O(n)`
+    
+    - Object.values - `O(n)`
+    
+    - Object.entries - `O(n)`
+    
+    - hasOwnProperty - `O(1)` (accessing > constant time)
 
 <br />
 
