@@ -1,14 +1,14 @@
 # Big O Notaion
 ### :: Index
-- Objectives
-- Intro to Big O
-- Timing our code, Not Reliable.
-- Counting Operations
-- Big O Definition
-- Simplifying Big O Expressions
-- Space Complexity
-- Logs
-- Section Recap
+- [Objectives](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/big_o_notation.md#-objectives)
+- [Intro to Big O](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/big_o_notation.md#-intro-to-big-o)
+- [Timing our code, Not Reliable.](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/big_o_notation.md#-timing-our-code-not-reliable)
+- [Counting Operations](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/big_o_notation.md#-counting-operations)
+- [Big O Definition](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/big_o_notation.md#-big-o-definition)
+- [Simplifying Big O Expressions](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/big_o_notation.md#-simplifying-big-o-expressions)
+- [Space Complexity](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/big_o_notation.md#-space-complexity)
+- [Logs](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/big_o_notation.md#-logs)
+- [Section Recap](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/big_o_notation.md#-section-recap)
 
 <br />
 
