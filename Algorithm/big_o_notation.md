@@ -6,6 +6,7 @@
 - Counting Operations
 - Big O Definition
 - Simplifying Big O Expressions
+- Space Complexity
 
 <br />
 
@@ -213,6 +214,49 @@
       for (var i = 1; i <= Math.min(5, n); i++) {
         console.log(i);
       }
+    }
+    ```
+
+<br />
+
+### :: Space Complexity
+- `Time complexity` : analyzing the runtime of an algorithm as the size of the inputs increases.
+
+- `Space complexity` : analyzing how much additional memory we need to allocate in order to run the code in algorithm.
+    
+    - `Auxiliary space complexity` : space required by the algorithm, not including space taken up by the inputs.
+    
+    - When we talk about space complexity, it is about `auxiliary space complexity`. We care about algorithm itself, not about the inputs, focusing on what happens inside the algorithm.
+
+- Space Complexity in JS (Rules of Thumb)
+    
+    - Most primitives (`booleans`, `numbers`, `undefined`, `null`) are constant space.
+    
+    - Strings require `O(n)` space (where `n` is the string length)
+    
+    - Referenced types are generally `O(n)`, where n is the length (for arrays) or the number of keys (for objects)
+
+- Example 1) `O(1)` space
+
+    ```jsx
+    function sum(arr) {
+      let total = 0; // one number
+      for (let i = 0; i < arr.length; i++) { // another number (let i = 0)
+        total += arr[i];
+      }
+      return total;
+    }
+    ```
+
+- Example 2) `O(n)` space
+
+    ```jsx
+    function double(arr) {
+      let newArr = [];
+      for (let i = 0; i < arr.length; i++) {
+        newArr.push(2 * arr[i]);
+      }
+      return newArr; // n numbers
     }
     ```
 
