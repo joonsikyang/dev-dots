@@ -2,9 +2,9 @@
 > Built-in Data Structures through the lens of Big O
 
 ### :: Index
-- Objectives
-- The Big O of Objects
-- The Big O of Arrays
+- [Objectives](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/performance_of_arrays_and_objects.md#-objectives)
+- [The Big O of Objects](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/performance_of_arrays_and_objects.md#-the-big-o-of-objects)
+- [The Big O of Arrays](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/performance_of_arrays_and_objects.md#-the-big-o-of-arrays)
 
 <br />
 
