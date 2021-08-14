@@ -4,8 +4,7 @@
 ### :: Index
 - Objectives
 - The Big O of Objects
-- When are Arrays Slow?
-- Big O of Array Methods
+- The Big O of Arrays
 
 <br />
 
@@ -59,7 +58,7 @@
 
 <br />
 
-### :: When are Arrays Slow?
+### :: The Big O of Arrays
 - Arrays : Ordered lists
 
     ```jsx
@@ -73,7 +72,7 @@
     
     - When you need fast access / insertion and removal (depends on what you're trying to do)
 
-- Big O of Objects
+- Big O of Arrays (When are Arrays Slow?)
     
     - Searching - `O(n)`
     
@@ -91,6 +90,22 @@
         
         - Removing the first element - `O(n)` (reindexing)
 
-<br />
+- Big O of Array Methods
 
-### :: Big O of Array Methods
+    - push - `O(1)`
+    
+    - pop - `O(1)`
+    
+    - shift - `O(n)`
+    
+    - unshift - `O(n)`
+    
+    - concat - `O(n)` (it grows in proportion with the total size of the new array)
+    
+    - slice - `O(n)`
+    
+    - splice - `O(n)`
+    
+    - sort - `O(N * logN)` (slowest thing in here)
+    
+    - forEach / map / filter / reduce / etc. - `O(n)`
