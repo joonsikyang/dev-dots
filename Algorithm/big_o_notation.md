@@ -13,7 +13,7 @@
 <br />
 
 ### :: Objectives
-1. Motivate the need for sth like Big O Notation
+1. Motivate the need for Big O Notation
 2. Describe what Big O Notations is
 3. Simplify Big O Expressions
 4. Define `time complexity` and `space complexity`
