@@ -1,7 +1,7 @@
 # Problem Solving Approach and Patterns
 ### :: Index
-- Problem Solving Approach
-- Problem Solving Patterns
+- [Problem Solving Approach](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#-problem-solving-approach)
+- [Problem Solving Patterns](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#-problem-solving-patterns)
 
 <br />
 
