@@ -2,10 +2,10 @@
 ### :: Index
 - [Problem Solving Approach](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#-problem-solving-approach)
 - [Problem Solving Patterns](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#-problem-solving-patterns)
-    - [1) Frequency Counter Pattern]()
-    - [2) Multiple Pointers Pattern]()
-    - [3) Sliding Window Pattern]()
-    - [4) Divide and Conquer Pattern]()
+    - [1) Frequency Counter Pattern](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#1-frequency-counter-pattern)
+    - [2) Multiple Pointers Pattern](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#2-multiple-pointers-pattern)
+    - [3) Sliding Window Pattern](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#3-sliding-window-pattern)
+    - [4) Divide and Conquer Pattern](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#4-divide-and-conquer-pattern)
 
 <br />
 
