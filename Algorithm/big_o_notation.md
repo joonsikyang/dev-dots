@@ -31,7 +31,7 @@
 
 - It's a system of generalizing code and talking about it and comparing code and its performance to other pieces of code.
 
-- It is usseful for discussing trade-offs between different approaches considering the context of the code.
+- It is useful for discussing trade-offs between different approaches considering the context of the code.
 
 - When your code slows down or crashes, identifying parts of the code that are inefficient can help us find pain points in our applications.
 
