@@ -168,7 +168,7 @@
             return false;
           }
 
-          const lookup = {};
+          let lookup = {};
 
           for (let i = 0; i < first.length; i++) {
             let letter = first[i];
