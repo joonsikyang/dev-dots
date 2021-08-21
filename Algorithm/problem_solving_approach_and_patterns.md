@@ -27,7 +27,7 @@
     - Start with simple examples with an input and the output.
     - Progress to more complex examples.
     - Explore examples with empty inputs.
-    - Explore example with invalid inputs.
+    - Explore examples with invalid inputs.
 - `Step 3 : Break It Down`
     - Explicitly write out the steps you need to take.
 - `Step 4 : Solve or Simplify`
