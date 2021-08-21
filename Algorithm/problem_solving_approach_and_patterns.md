@@ -1,7 +1,7 @@
 # Problem Solving Approach and Patterns
 ### :: Index
 - [Problem Solving Approach](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#-problem-solving-approach)
-- [Problem Solving Patterns](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#-problem-solving-patterns)
+- [Common Problem Solving Patterns](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#-problem-solving-patterns)
     - [1) Frequency Counter Pattern](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#1-frequency-counter-pattern)
     - [2) Multiple Pointers Pattern](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#2-multiple-pointers-pattern)
     - [3) Sliding Window Pattern](https://github.com/joonsikyang/dev-dots/blob/main/Algorithm/problem_solving_approach_and_patterns.md#3-sliding-window-pattern)
@@ -48,7 +48,7 @@
 
 <br />
 
-### :: Problem Solving Patterns
+### :: Common Problem Solving Patterns
 
 #### 1) Frequency Counter Pattern
 - This pattern uses objects or sets to collect values / frequencies of values.
@@ -60,7 +60,15 @@
 - (In terms of Big O Complexity)
 
 - Example 1) `same` function
-    - 1) Nested loops of `O(n²)` operations
+    - Write a function called same, which accepts two arrays. The function should return true if every value in the array has it's corresponding value squared in the second array. The frequency of values must be the same. 
+    
+        ```js
+        same([1,2,3], [4,1,9]) // true
+        same([1,2,3], [1,9]) // false
+        same([1,2,1], [4,4,1]) // false (must be same frequency)
+        ```
+    
+    - 1) Nested loops of `O(n²)` operations (in terms of time complexity)
 
         ```jsx
         function same(arr1, arr2){
@@ -81,7 +89,7 @@
         same([1,2,3,2], [9,1,4,4])
         ```
 
-    - 2) Refactored - `O(n)`
+    - 2) Refactored - Time Complexity - `O(n)`
 
         ```jsx
         function same(arr1, arr2){
@@ -121,6 +129,17 @@
     - An anagram is a word, phrase, or name formed by rearranging the letters of another, such as *cinema*, formed form *iceman*.
     
     - Given two strings, write a function to determine if the second string is an anagram of the first.
+    
+    ```js
+    validAnagram('', '') // true
+    validAnagram('aaz', 'zza') // false
+    validAnagram('anagram', 'nagaram') // true
+    validAnagram("rat","car") // false) // false
+    validAnagram('awesome', 'awesom') // false
+    validAnagram('qwerty', 'qeywrt') // true
+    validAnagram('texttwisttime', 'timetwisttext') // true
+
+    ```
     
     - Exercise)
 
