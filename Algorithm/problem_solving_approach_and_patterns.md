@@ -51,6 +51,10 @@
 ### :: Common Problem Solving Patterns
 
 #### 1) Frequency Counter Pattern
+- When to use Frequency Counter Pattern?
+
+- Any time you have multiple pieces of data and you need to compare them in order to see if they consist of the same individual pieces.
+
 - This pattern uses objects or sets to collect values / frequencies of values.
 
 - This can often avoid the need for nested loops of `O(n²)` operations with arrays / strings.
